@@ -10,7 +10,7 @@ Nothing held by the site. A public receipt at every hop.</p>
 
 <p align="center">
   <a href="https://landfun.vercel.app">landfun.vercel.app</a> ·
-  <a href="https://landfun.vercel.app/land">live receipts</a> · <a href="https://land-production.up.railway.app/api/engine">api</a> ·
+  <a href="https://landfun.vercel.app/land">live receipts</a> · <a href="https://land-production-a215.up.railway.app/api/engine">api</a> ·
   <a href="https://x.com/landfun">@landfun</a>
 </p>
 
