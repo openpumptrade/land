@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LAND · $LAND</title>
+  <meta name="description" content="LAND ($LAND): fees become land. They're not making any more of it. Creator rewards converted into exposure to city home-price indices on Parcl, measured in square feet, marked daily, never sold.">
+  <meta name="land-api" content="">
+  <meta name="land-ca" content="">
+  <meta property="og:title" content="LAND · $LAND · fees become land">
+  <meta property="og:description" content="Stocks down, AI down, crypto down. Land doesn't care. A pump.fun coin whose creator rewards buy exposure to the housing market on Solana, through Parcl. Square feet held, city by city, live.">
+  <meta property="og:image" content="https://landfun.vercel.app/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://landfun.vercel.app/logo.png">
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap bar">
+      <a class="brand" href="/" data-nav aria-label="LAND"><img src="/logo-mark.png" alt="LAND"></a>
+      <nav aria-label="Sections">
+        <a href="/" data-nav>Engine</a>
+        <a href="/land" data-nav>Land</a>
+        <a href="/stats" data-nav>Stats</a>
+        <a href="/rules" data-nav>Rules</a>
+      </nav>
+      <div class="right">
+        <a class="pill social" href="https://x.com/landfun" target="_blank" rel="noopener">@landfun</a>
+        <span class="conn" id="conn" title="connecting"><i></i></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Engine (home) ================= -->
+  <main class="view home" data-view="/">
+    <section class="wrap hero">
+      <div class="hero-copy">
+        <p class="eyebrow">They're not making <span class="arrow">any more</span> of it</p>
+        <h1>Fees become<br><em>land.</em></h1>
+        <p class="lede">Stocks down. AI down. Crypto down. Land doesn't care. Creator rewards become exposure to city home-price indices, held in square feet, never sold.</p>
+        <div class="actions">
+          <a class="btn" href="/land" data-nav>Explore city indices</a>
+          <a class="btn ghost" href="/rules" data-nav>How it works</a>
+        </div>
+        <div class="ca" id="ca">
+          <span class="ca-k">CA</span>
+          <code id="caValue">dropping at launch</code>
+          <button class="ca-btn" id="caCopy" hidden>Copy</button>
+          <a class="ca-btn" id="caLink" target="_blank" rel="noopener" hidden>pump.fun ↗</a>
+        </div>
+      </div>
+      <figure class="hero-art"><img src="/art/hero.jpg" alt="An isometric city block with one lot marked in orange and survey dimensions along its edges" width="837" height="384"></figure>
+    </section>
+
+    <section class="wrap">
+      <div class="kpis">
+        <div class="kpi"><b id="kpSqft">0 sqft</b><span>Square feet</span></div>
+        <div class="kpi"><b id="kpValue">$0</b><span>Position value</span></div>
+        <div class="kpi"><b id="kpColl">$0</b><span>USDC collateral</span></div>
+        <div class="kpi"><b id="kpStatus">Standby</b><span>Engine status</span></div>
+      </div>
+    </section>
+
+    <section class="wrap markets">
+      <h2 class="h2">Eight markets. One growing footprint.</h2>
+      <div id="lotWrap"><div class="lotgrid" id="lotGrid"></div></div>
+    </section>
+
+    <section class="wrap duo">
+      <div class="panel">
+        <div class="panel-head"><h2 class="h2">The engine</h2><span class="state" id="hmLoopState"><i></i><b>standby</b></span></div>
+        <ol class="steps" id="hmSteps">
+          <li data-step="claim"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 11h16v9H4zM2 7h20v4H2zM12 7v13M12 7c-2.5 0-4-1-4-2.5S9.5 2 11 3.5 12 7 12 7zm0 0c2.5 0 4-1 4-2.5S14.5 2 13 3.5 12 7 12 7z"/></svg></span><b>Claim</b><small></small></li>
+          <li class="sep" aria-hidden="true">→</li>
+          <li data-step="convert"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 3 7.5l9 4.5 9-4.5zM3 12l9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></svg></span><b>Convert</b><small></small></li>
+          <li class="sep" aria-hidden="true">→</li>
+          <li data-step="bridge"><span class="ico"><svg viewBox="0 0 24 24"><path d="M10 13a4 4 0 0 0 5.7 0l3-3a4 4 0 1 0-5.7-5.7l-1.5 1.5M14 11a4 4 0 0 0-5.7 0l-3 3a4 4 0 1 0 5.7 5.7l1.5-1.5"/></svg></span><b>Bridge</b><small></small></li>
+          <li class="sep" aria-hidden="true">→</li>
+          <li data-step="buy"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></span><b>Open positions</b><small></small></li>
+        </ol>
+        <div class="cycle">
+          <div class="row-between"><span class="label">Next cycle in</span><span class="mono strong" id="hmLeft">–</span></div>
+          <div class="seg" id="hmRuler"></div>
+          <span class="muted small" id="hmVault">vault: –</span>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h2 class="h2">Latest activity</h2><span class="muted small" id="hmAccount">parcl account –</span></div>
+        <ol class="activity" id="hmActivity"></ol>
+      </div>
+    </section>
+
+    <p class="wrap foot">Index exposure via Parcl. No physical property ownership.</p>
+  </main>
+
+
+  <!-- ================= Pages ================= -->
+  <main class="view page" data-view="page" hidden>
+    <div class="wrap">
+
+      <article data-page="/land" hidden>
+        <p class="crumb">Portfolio / City indices</p>
+        <div class="titlerow">
+          <div>
+            <h1>Your footprint, city by city.</h1>
+            <p class="lede">Track index exposure across eight housing markets.</p>
+          </div>
+          <span class="status" id="ldStatus">Pre-launch · No positions yet</span>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><b id="ldSqft">0 sqft</b><span>Total exposure</span></div>
+          <div class="kpi"><b id="ldValue">$0</b><span>Position value</span></div>
+          <div class="kpi"><b id="ldColl">$0</b><span>Collateral</span></div>
+          <div class="kpi"><b id="ldMarkets">8</b><span>Markets tracked</span></div>
+        </div>
+        <div class="duo land-duo">
+          <div class="panel">
+            <div class="panel-head"><h2 class="h2">City markets</h2><span class="muted small" id="ldOracle">index · daily</span></div>
+            <div class="table-wrap plain"><table class="table markets-table" id="ldLots"></table></div>
+          </div>
+          <aside class="panel side">
+            <img src="/art/land.jpg" alt="A white architectural model of a city with one block marked in orange" width="563" height="328">
+            <h3 id="ldSideTitle">A footprint starts with the first cycle.</h3>
+            <p id="ldSideText">No positions yet. When the engine runs a cycle, rewards are converted to USDC, bridged to Parcl, and the first city index positions open here.</p>
+            <a class="btn" href="/" data-nav>View the engine →</a>
+          </aside>
+        </div>
+        <ol class="steprow">
+          <li><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 11h16v9H4zM2 7h20v4H2zM12 7v13M12 7c-2.5 0-4-1-4-2.5S9.5 2 11 3.5 12 7 12 7zm0 0c2.5 0 4-1 4-2.5S14.5 2 13 3.5 12 7 12 7z"/></svg></span><i>1</i><b>Claim creator rewards</b></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></span><i>2</i><b>Convert to USDC</b></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24"><path d="M2 17h20M4 17v-6M20 17v-6M4 11c4-5 12-5 16 0M8 17v-4M12 17v-5M16 17v-4"/></svg></span><i>3</i><b>Bridge to Parcl</b></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 3 7.5l9 4.5 9-4.5zM3 12l9 4.5 9-4.5M3 16.5 12 21l9-4.5"/></svg></span><i>4</i><b>Open index positions</b></li>
+        </ol>
+        <h2 class="h2 section">Accounts &amp; receipts</h2>
+        <div class="kv" id="ldLinks"></div>
+        <div class="table-wrap"><table class="table" id="ldLedger"></table></div>
+        <p class="muted small" id="ldNote"></p>
+        <p class="foot">City home-price index exposure via Parcl. No physical property ownership.</p>
+      </article>
+
+
+      <article data-page="/stats" hidden>
+        <p class="crumb">Engine / Stats</p>
+        <h1>Stats</h1>
+        <p class="lede">Square feet, position value and the index over time, plus every market the engine tracks.</p>
+        <div class="kpis">
+          <div class="kpi"><b id="stSqft">0 sqft</b><span>Square feet held</span></div>
+          <div class="kpi"><b id="stValue">$0</b><span>Position value</span></div>
+          <div class="kpi"><b id="stClaimed">0 SOL</b><span>Rewards claimed</span></div>
+          <div class="kpi"><b id="stBridged">$0</b><span>USDC bridged</span></div>
+        </div>
+        <div class="charts">
+          <figure class="chart-card"><figcaption><span class="label">Square feet held</span><span class="muted small">marks every 15 min</span></figcaption><div class="chart"><canvas id="chSqft"></canvas></div></figure>
+          <figure class="chart-card"><figcaption><span class="label">Position value</span><span class="muted small">USD at the index</span></figcaption><div class="chart"><canvas id="chValue"></canvas></div></figure>
+          <figure class="chart-card wide"><figcaption><span class="label">USA index</span><span class="muted small">USD per square foot, as the engine saw it</span></figcaption><div class="chart"><canvas id="chIndex"></canvas></div></figure>
+        </div>
+        <h2 class="h2 section">Markets</h2>
+        <div class="table-wrap"><table class="table" id="stMarkets"></table></div>
+        <p class="foot">Index exposure via Parcl. No physical property ownership.</p>
+      </article>
+
+
+
+
+      <article data-page="/rules" hidden>
+        <p class="crumb">How it works</p>
+        <h1>How it works</h1>
+        <p class="lede">The engine turns the coin's creator rewards into square feet of city home-price indices, every cycle, with a receipt at every hop.</p>
+        <div class="flow">
+          <div><span>01</span><b>Claim</b><p>The engine wallet claims the coin's creator rewards from pump.fun. <code>SOL</code>, on chain.</p></div>
+          <div><span>02</span><b>Convert</b><p>Everything above a gas reserve is swapped on Solana through <code>Jupiter</code> into <b>USDC</b>, the only collateral the Parcl bridge accepts. One transaction, the signature is the receipt.</p></div>
+          <div><span>03</span><b>Bridge</b><p>The USDC is deposited into the <b>Parcl bridge program</b> on Solana (minimum $5 per deposit). The deposit is credited to the Parcl account owned by the very same key, so nothing is custodied by a third party in between.</p></div>
+          <div><span>04</span><b>Open positions</b><p>Free collateral becomes <b>long positions</b> on the city indices in the target book, cheapest deficit first, with IOC market orders at <b>1x</b>: notional equals collateral, no borrowing. One unit of a market is one square foot of its index.</p></div>
+          <div><span>05</span><b>Hold</b><p>Parcl Labs publishes each index once a day (7:50 AM ET). Positions are marked to that print; the only carry is the hourly funding rate. Square feet never get sold by the engine.</p></div>
+          <div><span>06</span><b>Repeat</b><p id="ldEvery">Every 10 minutes.</p></div>
+        </div>
+        <h2 class="h2 section">Photo credits</h2>
+        <p class="lede">The market cards show photographs of each city from Unsplash, free to use under the Unsplash License.</p>
+        <ul class="credits" id="credits"></ul>
+        <p class="foot">Index exposure via Parcl. No physical property ownership. Not financial advice.</p>
+      </article>
+    </div>
+  </main>
+</body>
+</html>

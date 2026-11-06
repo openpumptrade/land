@@ -1,0 +1,58 @@
+{
+ "nyc": {
+  "title": "New York City \u00b7 Unsplash",
+  "license": "Unsplash License",
+  "artist": "@mdisc",
+  "page": "https://unsplash.com/photos/landscape-photo-of-new-york-empire-state-building-5omwAMDxmkU",
+  "photo": "photo-1485871981521-5b1fd3805eee"
+ },
+ "chicago": {
+  "title": "Chicago \u00b7 Unsplash",
+  "license": "Unsplash License",
+  "artist": "@nacio1966",
+  "page": "https://unsplash.com/photos/an-aerial-view-of-a-large-city-next-to-a-body-of-water-RIs3Eov9GoM",
+  "photo": "photo-1714662660476-022bfd34cf44"
+ },
+ "losangeles": {
+  "title": "Los Angeles \u00b7 Unsplash",
+  "license": "Unsplash License",
+  "artist": "@joelmott",
+  "page": "https://unsplash.com/photos/lined-palm-trees-7zODz1HMHK4",
+  "photo": "photo-1567898948655-acbf0ebe1606"
+ },
+ "miami": {
+  "title": "Miami \u00b7 Unsplash",
+  "license": "Unsplash License",
+  "artist": "@rolandoyera",
+  "page": "https://unsplash.com/photos/a-view-of-a-city-from-across-the-water-1T4xUbhjmmk",
+  "photo": "photo-1670861643063-0892c6fab1ce"
+ },
+ "austin": {
+  "title": "Austin \u00b7 Unsplash",
+  "license": "Unsplash License",
+  "artist": "@mjtangonan",
+  "page": "https://unsplash.com/photos/river-near-buildings-during-daytime-wKfTNWaDYgs",
+  "photo": "photo-1557335200-a65f7f032602"
+ },
+ "washingtondc": {
+  "title": "Washington, DC \u00b7 Unsplash",
+  "license": "Unsplash License",
+  "artist": "@caleblaz",
+  "page": "https://unsplash.com/photos/capitol-hill-a6h5e59r15o",
+  "photo": "photo-1557160854-e1e89fdd3286"
+ },
+ "sanfrancisco": {
+  "title": "San Francisco \u00b7 Unsplash",
+  "license": "Unsplash License",
+  "artist": "@vay2250",
+  "page": "https://unsplash.com/photos/golden-gate-bridge-san-francisco-california-QhYTCG3CTeI",
+  "photo": "photo-1610312278520-bcc893a3ff1d"
+ },
+ "usa": {
+  "title": "United States \u00b7 Unsplash",
+  "license": "Unsplash License",
+  "artist": "@aviosly",
+  "page": "https://unsplash.com/photos/aerial-view-of-house-village-ZdtOy25eNn4",
+  "photo": "photo-1571979622878-622d38ec238c"
+ }
+}
