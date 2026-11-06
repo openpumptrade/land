@@ -3,10 +3,10 @@
 // surface (OKLCH L inside the dark band, >= 3:1 contrast); text stays in
 // text colors, never the series color.
 
-const MARK = '#e4571b';
-const MARK_FILL = 'rgba(228,87,27,0.14)';
-const GRID = 'rgba(28,42,30,0.08)';
-const AXIS_TEXT = '#7d8a7e';
+const MARK = '#f2c230';
+const MARK_FILL = 'rgba(242,194,48,0.07)';
+const GRID = 'rgba(236,230,216,0.08)';
+const AXIS_TEXT = '#857c6d';
 const FONT = '11px "IBM Plex Mono", ui-monospace, monospace';
 
 function setup(canvas) {
@@ -91,10 +91,10 @@ export function lineChart(canvas, points, { fmt = String, axis = fmt, xfmt = Str
     const tip = tooltip(wrap);
     if (hover == null) { tip.hidden = true; return; }
     const p = points.reduce((best, q) => (Math.abs(X(q.x) - hover) < Math.abs(X(best.x) - hover) ? q : best));
-    ctx.strokeStyle = 'rgba(28,42,30,0.3)'; ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(236,230,216,0.3)'; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(Math.round(X(p.x)) + 0.5, pad.t); ctx.lineTo(Math.round(X(p.x)) + 0.5, h - pad.b); ctx.stroke();
     ctx.beginPath(); ctx.arc(X(p.x), Y(p.y), 4.5, 0, Math.PI * 2);
-    ctx.fillStyle = MARK; ctx.fill(); ctx.strokeStyle = '#fbf7ee'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = MARK; ctx.fill(); ctx.strokeStyle = '#141210'; ctx.lineWidth = 2; ctx.stroke();
     tip.hidden = false;
     tip.innerHTML = `<span>${xfmt(p.x)}</span><b>${fmt(p.y)}</b>${label ? `<em>${label}</em>` : ''}`;
     tip.style.left = `${Math.min(w - tip.offsetWidth - 4, Math.max(4, X(p.x) - tip.offsetWidth / 2))}px`;

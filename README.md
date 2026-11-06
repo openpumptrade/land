@@ -92,7 +92,7 @@ The frontend is static (`public/`, `vercel.json` included). The API runs anywher
 server.js          mounts the engine, serves /api/engine, hosts public/
 engine/engine.js   the land engine: claim → convert → bridge → buy → hold
 engine/parcl.js    Parcl V4 client: public reads, owner-key signing, the bridge deposit instruction
-public/            the site: index.html, style.css, app.js, lots.js (the market cards), cities/ (photos), art/ (illustrations)
+public/            the site: index.html, style.css, app.js, plat.js (the plat map), cities/ (photos)
 tools/smoke.mjs    dry-run smoke test of the engine with a throwaway key
 vendor/pumpkit     Solana / pump.fun toolkit (claims, swaps, transfers)
 ```
