@@ -3,173 +3,197 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LAND · $LAND</title>
-  <meta name="description" content="LAND ($LAND): fees become land. They're not making any more of it. Creator rewards converted into exposure to city home-price indices on Parcl, measured in square feet, marked daily, never sold.">
+  <title>Land · $LAND</title>
+  <meta name="description" content="Land ($LAND): creator rewards converted into exposure to U.S. home-price indices on Parcl. Held in square feet, marked daily, never sold.">
   <meta name="land-api" content="https://land-production-a215.up.railway.app">
   <meta name="land-ca" content="">
-  <meta property="og:title" content="LAND · $LAND · fees become land">
-  <meta property="og:description" content="Stocks down, AI down, crypto down. Land doesn't care. A pump.fun coin whose creator rewards buy exposure to the housing market on Solana, through Parcl. Square feet held, city by city, live.">
+  <meta property="og:title" content="Land · $LAND">
+  <meta property="og:description" content="A pump.fun coin whose creator rewards buy exposure to the U.S. housing market on Solana, through Parcl. Square feet held, city by city, live.">
   <meta property="og:image" content="https://landfun.vercel.app/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://landfun.vercel.app/logo.png">
-  <meta name="theme-color" content="#141210">
+  <meta name="theme-color" content="#0a0b0d">
   <link rel="icon" href="/icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="/style.css">
   <script type="module" src="/app.js"></script>
 </head>
 <body>
-  <!-- Title bar: the strip across the top of a plan sheet -->
-  <header class="tb">
-    <a class="brand" href="/" data-nav aria-label="LAND">
-      <img src="/logo-mark.png" alt="" width="34" height="34">
-      <span class="word">LAND</span>
-      <span class="sub">Plat of survey</span>
-    </a>
-    <nav aria-label="Sheets">
-      <a href="/" data-nav><i>Sheet 1</i><b>Engine</b></a>
-      <a href="/land" data-nav><i>Sheet 2</i><b>Parcels</b></a>
-      <a href="/stats" data-nav><i>Sheet 3</i><b>Stats</b></a>
-      <a href="/rules" data-nav><i>Sheet 4</i><b>Notes</b></a>
-    </nav>
-    <div class="right">
-      <a class="handle" href="https://x.com/landfun" target="_blank" rel="noopener">@landfun</a>
-      <span class="conn" id="conn" title="connecting"><i></i><em>live</em></span>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/" data-nav aria-label="Land">
+        <img src="/logo-mark.png" alt="" width="26" height="26">
+        <span>Land</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="/" data-nav>Overview</a>
+        <a href="/land" data-nav>Portfolio</a>
+        <a href="/stats" data-nav>Analytics</a>
+        <a href="/rules" data-nav><span class="l">How it works</span><span class="s">Guide</span></a>
+      </nav>
+      <div class="right">
+        <div class="ca" id="ca">
+          <span class="ca-k">CA</span>
+          <code id="caValue">Not launched</code>
+          <button class="ca-btn" id="caCopy" hidden title="Copy contract address" aria-label="Copy"><svg viewBox="0 0 16 16"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 5.5v-2a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2"/></svg></button>
+          <a class="ca-btn" id="caLink" target="_blank" rel="noopener" hidden title="Open on pump.fun" aria-label="pump.fun"><svg viewBox="0 0 16 16"><path d="M6.5 3.5h-2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-2M9.5 3.5h3v3M12.5 3.5 7.5 8.5"/></svg></a>
+        </div>
+        <a class="icon" href="https://x.com/landfun" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1.3 2h7l4.8 6.3L18.9 2Zm-1.2 18h1.9L7.3 3.9H5.3L17.7 20Z"/></svg></a>
+        <span class="conn" id="conn" title="connecting"><i></i>Live</span>
+      </div>
     </div>
   </header>
 
-  <!-- ================= Sheet 1: the engine (home) ================= -->
+  <!-- ================= Overview ================= -->
   <main class="view" data-view="/">
-    <section class="sheet hero">
-      <figure class="plat" id="platWrap">
-        <svg id="plat" viewBox="0 0 1000 720" role="img" aria-label="Plat of the eight city index markets"></svg>
-      </figure>
-
-      <aside class="block">
-        <p class="k">Subdivision of the creator rewards of <b>$LAND</b></p>
-        <h1 data-text="They're not making any more of it">They're not making<br>any more of it</h1>
-        <p class="lede">Stocks down. AI down. Crypto down. Land doesn't care. Every fee this coin earns is claimed, converted to USDC, bridged to Parcl and turned into square feet of city home-price indices. Held, never sold.</p>
-
-        <dl class="facts">
-          <div><dt>Square feet held</dt><dd id="kpSqft">0 sqft</dd></div>
-          <div><dt>Position value</dt><dd id="kpValue">$0</dd></div>
-          <div><dt>USDC collateral</dt><dd id="kpColl">$0</dd></div>
-          <div><dt>Engine</dt><dd id="kpStatus">Standby</dd></div>
-          <div><dt>Next cycle</dt><dd id="hmLeft">–</dd></div>
-        </dl>
-        <div class="seg" id="hmRuler" aria-hidden="true"></div>
-
-        <div class="ca" id="ca">
-          <span class="ca-k">Contract No.</span>
-          <code id="caValue">dropping at launch</code>
-          <button class="ca-btn" id="caCopy" hidden>Copy</button>
-          <a class="ca-btn" id="caLink" target="_blank" rel="noopener" hidden>pump.fun ↗</a>
+    <div class="wrap">
+      <div class="page-head">
+        <div>
+          <h1>Overview</h1>
+          <p class="sub">Creator rewards of <b>$LAND</b> are claimed, converted to USDC and turned into long positions on U.S. city home-price indices on Parcl. Measured in square feet. Never sold.</p>
         </div>
-
-        <ol class="legend" id="hmSteps" aria-label="Engine steps">
-          <li data-step="claim"><i>1</i><b>Claim</b><small></small></li>
-          <li data-step="convert"><i>2</i><b>Convert</b><small></small></li>
-          <li data-step="bridge"><i>3</i><b>Bridge</b><small></small></li>
-          <li data-step="buy"><i>4</i><b>Buy sqft</b><small></small></li>
-        </ol>
-        <p class="vault" id="hmVault">Creator vault: –</p>
-        <span class="state" id="hmLoopState" hidden><i></i><b>standby</b></span>
-      </aside>
-    </section>
-
-    <section class="sheet two">
-      <div class="pane">
-        <header><h2>Schedule of parcels</h2><span class="hint" id="hmOracle">Parcl Labs index · daily print</span></header>
-        <div class="table-wrap"><table class="table sched" id="hmSchedule"></table></div>
+        <div class="head-right">
+          <span class="pill" id="kpStatus">Standby</span>
+          <span class="next">Next cycle <b id="hmLeft">–</b></span>
+        </div>
       </div>
-      <div class="pane notes">
-        <header><h2>Field notes</h2><span class="hint" id="hmAccount">parcl account –</span></header>
-        <ol class="activity" id="hmActivity"></ol>
-      </div>
-    </section>
+      <div class="progress" id="hmRuler" aria-hidden="true"><i></i></div>
 
-    <footer class="cert">
-      <span>Certified: index exposure via Parcl. No physical property ownership.</span>
-      <span>Marked daily at the Parcl Labs print · 7:50 AM ET</span>
-      <span>Sheet 1 of 4</span>
-    </footer>
+      <section class="stats">
+        <div class="stat"><span>Square feet held</span><b id="kpSqft">0</b><small id="kpSqftSub">no positions yet</small></div>
+        <div class="stat"><span>Position value</span><b id="kpValue">$0.00</b><small id="kpValueSub">unrealized –</small></div>
+        <div class="stat"><span>USDC collateral</span><b id="kpColl">$0.00</b><small id="kpCollSub">$0.00 free</small></div>
+        <div class="stat"><span>Rewards claimed</span><b id="kpClaimed">0 SOL</b><small id="kpClaimedSub">$0.00 bridged</small></div>
+      </section>
+
+      <section class="main-grid">
+        <div class="card">
+          <header>
+            <h2>Markets</h2>
+            <div class="seg-ctl" id="hmRange" role="group" aria-label="Change window"><button data-r="1d" class="on">1D</button><button data-r="30d">30D</button></div>
+          </header>
+          <div class="heat" id="heat"></div>
+          <footer class="card-foot"><span id="hmOracle">Parcl Labs index · daily print</span><span>Tinted by change, relative to the set</span></footer>
+        </div>
+        <div class="col">
+          <div class="card">
+            <header><h2>Engine</h2><span class="hint" id="hmAccount">–</span></header>
+            <ol class="steps" id="hmSteps">
+              <li data-step="claim"><i></i><div><b>Claim rewards</b><small></small></div></li>
+              <li data-step="convert"><i></i><div><b>Convert to USDC</b><small></small></div></li>
+              <li data-step="bridge"><i></i><div><b>Bridge to Parcl</b><small></small></div></li>
+              <li data-step="buy"><i></i><div><b>Buy square feet</b><small></small></div></li>
+            </ol>
+            <dl class="mini" id="hmVault">
+              <div><dt>Claimable</dt><dd id="vClaimable">–</dd></div>
+              <div><dt>Claimed</dt><dd id="vClaimed">–</dd></div>
+              <div><dt>Bridged</dt><dd id="vBridged">–</dd></div>
+            </dl>
+          </div>
+          <div class="card">
+            <header><h2>Activity</h2><span class="hint">latest</span></header>
+            <ol class="activity" id="hmActivity"></ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <header><h2>Positions</h2><span class="hint">eight markets · equal weight · 1x</span></header>
+        <div class="table-wrap"><table class="table" id="hmSchedule"></table></div>
+      </section>
+
+      <footer class="foot">
+        <span>Index exposure via Parcl. No physical property is owned. Not financial advice.</span>
+        <span>Marked daily at the Parcl Labs print, 7:50 AM ET</span>
+      </footer>
+    </div>
   </main>
 
-  <!-- ================= Sheets 2–4 ================= -->
+  <!-- ================= Other pages ================= -->
   <main class="view page" data-view="page" hidden>
+    <div class="wrap">
 
-    <article data-page="/land" hidden>
-      <header class="sheet-head">
-        <p class="k">Sheet 2</p>
-        <h1 data-text="Schedule of parcels">Schedule of parcels</h1>
-        <span class="status" id="ldStatus">Pre-launch · No positions yet</span>
-      </header>
-      <dl class="stations">
-        <div><dt>Total exposure</dt><dd id="ldSqft">0 sqft</dd></div>
-        <div><dt>Position value</dt><dd id="ldValue">$0</dd></div>
-        <div><dt>Collateral</dt><dd id="ldColl">$0</dd></div>
-        <div><dt>Parcels</dt><dd id="ldMarkets">8</dd></div>
-      </dl>
-      <section class="pane">
-        <header><h2>Parcels</h2><span class="hint" id="ldOracle">index · daily</span></header>
-        <div class="table-wrap"><table class="table sched" id="ldLots"></table></div>
-      </section>
-      <section class="pane">
-        <header><h2>Title &amp; accounts</h2><span class="hint" id="ldSideTitle">A footprint starts with the first cycle.</span></header>
-        <p class="prose" id="ldSideText"></p>
-        <dl class="kv" id="ldLinks"></dl>
-      </section>
-      <section class="pane">
-        <header><h2>Receipts</h2><span class="hint">every hop, with its signature</span></header>
-        <div class="table-wrap"><table class="table" id="ldLedger"></table></div>
-        <p class="hint" id="ldNote"></p>
-      </section>
-      <footer class="cert"><span>Certified: index exposure via Parcl. No physical property ownership.</span><span>Sheet 2 of 4</span></footer>
-    </article>
+      <article data-page="/land" hidden>
+        <div class="page-head">
+          <div><h1>Portfolio</h1><p class="sub">Every square foot the engine holds, the accounts behind it and every transaction with its receipt.</p></div>
+          <div class="head-right"><span class="pill" id="ldStatus">Pre-launch</span></div>
+        </div>
+        <section class="stats">
+          <div class="stat"><span>Total exposure</span><b id="ldSqft">0</b><small>square feet</small></div>
+          <div class="stat"><span>Position value</span><b id="ldValue">$0.00</b><small id="ldValueSub">unrealized –</small></div>
+          <div class="stat"><span>Collateral</span><b id="ldColl">$0.00</b><small id="ldCollSub">$0.00 free</small></div>
+          <div class="stat"><span>Markets</span><b id="ldMarkets">8</b><small id="ldMarketsSub">0 with a position</small></div>
+        </section>
+        <section class="card">
+          <header><h2>Positions</h2><span class="hint" id="ldOracle">index · daily</span></header>
+          <div class="table-wrap"><table class="table" id="ldLots"></table></div>
+        </section>
+        <section class="card">
+          <header><h2>Accounts</h2><span class="hint" id="ldSideTitle"></span></header>
+          <p class="prose" id="ldSideText"></p>
+          <dl class="kv" id="ldLinks"></dl>
+        </section>
+        <section class="card">
+          <header><h2>Transactions</h2><span class="hint">every hop, with its signature</span></header>
+          <div class="table-wrap"><table class="table" id="ldLedger"></table></div>
+          <p class="card-note" id="ldNote"></p>
+        </section>
+        <footer class="foot"><span>Index exposure via Parcl. No physical property is owned.</span></footer>
+      </article>
 
-    <article data-page="/stats" hidden>
-      <header class="sheet-head">
-        <p class="k">Sheet 3</p>
-        <h1 data-text="Stats">Stats</h1>
-      </header>
-      <dl class="stations">
-        <div><dt>Square feet held</dt><dd id="stSqft">0 sqft</dd></div>
-        <div><dt>Position value</dt><dd id="stValue">$0</dd></div>
-        <div><dt>Rewards claimed</dt><dd id="stClaimed">0 SOL</dd></div>
-        <div><dt>USDC bridged</dt><dd id="stBridged">$0</dd></div>
-      </dl>
-      <div class="charts">
-        <figure class="pane chart-card"><header><h2>Square feet held</h2><span class="hint">marks every 15 min</span></header><div class="chart"><canvas id="chSqft"></canvas></div></figure>
-        <figure class="pane chart-card"><header><h2>Position value</h2><span class="hint">USD at the index</span></header><div class="chart"><canvas id="chValue"></canvas></div></figure>
-        <figure class="pane chart-card wide"><header><h2>USA index</h2><span class="hint">USD per square foot, as the engine saw it</span></header><div class="chart"><canvas id="chIndex"></canvas></div></figure>
-      </div>
-      <section class="pane">
-        <header><h2>Markets</h2><span class="hint">all eight, with funding and weight</span></header>
-        <div class="table-wrap"><table class="table" id="stMarkets"></table></div>
-      </section>
-      <footer class="cert"><span>Certified: index exposure via Parcl. No physical property ownership.</span><span>Sheet 3 of 4</span></footer>
-    </article>
+      <article data-page="/stats" hidden>
+        <div class="page-head">
+          <div><h1>Analytics</h1><p class="sub">How the position has grown, mark by mark, and the eight markets side by side.</p></div>
+        </div>
+        <section class="stats">
+          <div class="stat"><span>Square feet held</span><b id="stSqft">0</b><small>square feet</small></div>
+          <div class="stat"><span>Position value</span><b id="stValue">$0.00</b><small>at today's index</small></div>
+          <div class="stat"><span>Rewards claimed</span><b id="stClaimed">0 SOL</b><small>from the creator vault</small></div>
+          <div class="stat"><span>USDC bridged</span><b id="stBridged">$0.00</b><small>deposited on Parcl</small></div>
+        </section>
+        <div class="charts">
+          <figure class="card chart-card"><header><h2>Square feet held</h2><span class="hint">marks every 15 min</span></header><div class="chart"><canvas id="chSqft"></canvas></div></figure>
+          <figure class="card chart-card"><header><h2>Position value</h2><span class="hint">USD at the index</span></header><div class="chart"><canvas id="chValue"></canvas></div></figure>
+          <figure class="card chart-card wide"><header><h2>USA index</h2><span class="hint">USD per square foot, as the engine saw it</span></header><div class="chart"><canvas id="chIndex"></canvas></div></figure>
+        </div>
+        <section class="card">
+          <header><h2>Markets</h2><span class="hint">funding, weight and PnL</span></header>
+          <div class="table-wrap"><table class="table" id="stMarkets"></table></div>
+        </section>
+        <footer class="foot"><span>Index exposure via Parcl. No physical property is owned.</span></footer>
+      </article>
 
-    <article data-page="/rules" hidden>
-      <header class="sheet-head">
-        <p class="k">Sheet 4</p>
-        <h1 data-text="General notes">General notes</h1>
-      </header>
-      <ol class="gnotes">
-        <li><i>1</i><b>Claim</b><p>The engine wallet claims the coin's creator rewards from pump.fun. SOL, on chain, with the signature as receipt.</p></li>
-        <li><i>2</i><b>Convert</b><p>Everything above a gas reserve is swapped on Solana through Jupiter into USDC, the only collateral the Parcl bridge accepts.</p></li>
-        <li><i>3</i><b>Bridge</b><p>The USDC is deposited into the Parcl bridge program on Solana (minimum $5 per deposit) and credited to the Parcl account owned by the very same key. No third party in between.</p></li>
-        <li><i>4</i><b>Buy square feet</b><p>Free collateral becomes long positions on the city indices in the target book, furthest-under-weight first, with IOC market orders at 1x: notional equals collateral, nothing borrowed. One unit of a market is one square foot of its index.</p></li>
-        <li><i>5</i><b>Hold</b><p>Parcl Labs publishes each index once a day (7:50 AM ET). Positions are marked to that print; the only carry is the hourly funding rate. The engine never sells.</p></li>
-        <li><i>6</i><b>Repeat</b><p id="ldEvery">Every 10 minutes.</p></li>
-        <li><i>7</i><b>Ownership</b><p>Square feet here are index exposure on Parcl, not deeds. Nothing is custodied by this site: the Parcl account belongs to the engine wallet's key and every position is public on the validator.</p></li>
-        <li><i>8</i><b>Photographs</b><p>Parcel photographs are from Unsplash, free to use under the Unsplash License.</p><ul class="credits" id="credits"></ul></li>
-      </ol>
-      <footer class="cert"><span>Certified: index exposure via Parcl. No physical property ownership. Not financial advice.</span><span>Sheet 4 of 4</span></footer>
-    </article>
+      <article data-page="/rules" hidden>
+        <div class="page-head">
+          <div><h1>How it works</h1><p class="sub">One loop, every ten minutes, from the creator vault to square feet.</p></div>
+        </div>
+        <div class="how">
+          <ol class="howlist">
+            <li><i>1</i><div><b>Claim</b><p>The engine wallet claims the coin's creator rewards from pump.fun. SOL, on chain, with the signature as receipt.</p></div></li>
+            <li><i>2</i><div><b>Convert</b><p>Everything above a gas reserve is swapped on Solana through Jupiter into USDC, the only collateral the Parcl bridge accepts.</p></div></li>
+            <li><i>3</i><div><b>Bridge</b><p>The USDC is deposited into the Parcl bridge program on Solana (minimum $5 per deposit) and credited to the Parcl account owned by the very same key. No third party in between.</p></div></li>
+            <li><i>4</i><div><b>Buy square feet</b><p>Free collateral becomes long positions on the city indices in the target book, furthest-under-weight first, with IOC market orders at 1x: notional equals collateral, nothing borrowed. One unit of a market is one square foot of its index.</p></div></li>
+            <li><i>5</i><div><b>Hold</b><p>Parcl Labs publishes each index once a day (7:50 AM ET). Positions are marked to that print; the only carry is the hourly funding rate. The engine never sells.</p></div></li>
+            <li><i>6</i><div><b>Repeat</b><p id="ldEvery">Every 10 minutes.</p></div></li>
+          </ol>
+          <aside class="col">
+            <div class="card">
+              <header><h2>Ownership</h2></header>
+              <p class="prose">Square feet here are index exposure on Parcl, not deeds. Nothing is custodied by this site: the Parcl account belongs to the engine wallet's key and every position is public on the validator.</p>
+            </div>
+            <div class="card">
+              <header><h2>Photographs</h2></header>
+              <p class="prose">City photographs are from Unsplash, free to use under the Unsplash License.</p>
+              <ul class="credits" id="credits"></ul>
+            </div>
+          </aside>
+        </div>
+        <footer class="foot"><span>Index exposure via Parcl. No physical property is owned. Not financial advice.</span></footer>
+      </article>
+    </div>
   </main>
 </body>
 </html>
