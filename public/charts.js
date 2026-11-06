@@ -1,11 +1,11 @@
 // Minimal canvas charts for the Analytics page: one series per chart, a quiet
 // grid, and a hover tooltip. Text stays in text colors, never the series color.
 
-const MARK = '#34c47c';
-const MARK_FILL = 'rgba(52,196,124,0.08)';
-const GRID = 'rgba(255,255,255,0.06)';
-const AXIS_TEXT = '#646c76';
-const FONT = '500 11px Inter, system-ui, sans-serif';
+const MARK = '#0e7a50';
+const MARK_FILL = 'rgba(14,122,80,0.10)';
+const GRID = 'rgba(14,16,19,0.07)';
+const AXIS_TEXT = '#677080';
+const FONT = '500 11px "JetBrains Mono", ui-monospace, monospace';
 
 function setup(canvas) {
   const dpr = Math.min(2, devicePixelRatio || 1);
@@ -93,10 +93,10 @@ export function lineChart(canvas, points, { fmt = String, axis = fmt, xfmt = Str
     const tip = tooltip(wrap);
     if (hover == null) { tip.hidden = true; return; }
     const p = points.reduce((best, q) => (Math.abs(X(q.x) - hover) < Math.abs(X(best.x) - hover) ? q : best));
-    ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(14,16,19,0.25)'; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(Math.round(X(p.x)) + 0.5, pad.t); ctx.lineTo(Math.round(X(p.x)) + 0.5, h - pad.b); ctx.stroke();
     ctx.beginPath(); ctx.arc(X(p.x), Y(p.y), 4, 0, Math.PI * 2);
-    ctx.fillStyle = MARK; ctx.fill(); ctx.strokeStyle = '#111316'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = MARK; ctx.fill(); ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 2; ctx.stroke();
     tip.hidden = false;
     tip.innerHTML = `<span>${xfmt(p.x)}</span><b>${fmt(p.y)}</b>${label ? `<em>${label}</em>` : ''}`;
     tip.style.left = `${Math.min(w - tip.offsetWidth - 4, Math.max(4, X(p.x) - tip.offsetWidth / 2))}px`;
@@ -127,7 +127,7 @@ export function barChart(canvas, items, { fmt = String, axis = fmt, label = '', 
       const x = pad.l + i * slot + (slot - bw) / 2;
       const bh = ((h - pad.t - pad.b) * it.value) / max;
       if (hover != null && hover >= pad.l + i * slot && hover < pad.l + (i + 1) * slot) hit = i;
-      ctx.fillStyle = hit === i ? '#5fd697' : MARK;
+      ctx.fillStyle = hit === i ? '#3fd98e' : MARK;
       if (bh > 0) {
         const r = Math.min(4, bw / 2, bh);                // rounded data end, square at the baseline
         ctx.beginPath();

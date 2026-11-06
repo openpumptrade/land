@@ -15,7 +15,7 @@ Nothing held by the site. A public receipt at every hop.</p>
 </p>
 
 <p align="center">
-  <img src="docs/home.jpg" width="100%" alt="Land overview: KPIs, the market heatmap, the engine and the positions table">
+  <img src="docs/home.jpg" width="100%" alt="LAND home: the hero, the stage and the stats">
 </p>
 
 ---
@@ -92,7 +92,7 @@ The frontend is static (`public/`, `vercel.json` included). The API runs anywher
 server.js          mounts the engine, serves /api/engine, hosts public/
 engine/engine.js   the land engine: claim → convert → bridge → buy → hold
 engine/parcl.js    Parcl V4 client: public reads, owner-key signing, the bridge deposit instruction
-public/            the site: index.html, style.css, app.js (overview, portfolio, analytics), charts.js, cities/ (photos)
+public/            the site: index.html (landing + pages), style.css (COINFT system), app.js, charts.js, cities/ (photos)
 tools/smoke.mjs    dry-run smoke test of the engine with a throwaway key
 vendor/pumpkit     Solana / pump.fun toolkit (claims, swaps, transfers)
 ```
