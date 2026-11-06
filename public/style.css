@@ -230,7 +230,8 @@ h2 { margin: 0; font-size: 13.5px; font-weight: 600; letter-spacing: -.005em; }
   .brand span { display: none; }
   .top nav { gap: 0; overflow-x: auto; scrollbar-width: none; }
   .top nav::-webkit-scrollbar { display: none; }
-  .top nav a { padding: 0 9px; font-size: 13px; }
+  .top nav a { padding: 0 8px; font-size: 13px; }
+  .conn { font-size: 0; gap: 0; }
   .ca, .top .icon, .top nav .l { display: none; }
   .top nav .s { display: inline; }
   .page-head { flex-direction: column; gap: 12px; }
