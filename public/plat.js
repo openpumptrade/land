@@ -99,7 +99,7 @@ export class Plat {
       <g class="corners">${tract.map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="4"/>`).join('')}</g>
       ${bearings}
       <g class="north" transform="translate(944, 54)"><path d="M0 -22 L8 6 L0 0 L-8 6 Z"/><text y="22" text-anchor="middle">N</text></g>
-      <g class="scale" transform="translate(60, 690)"><line x1="0" y1="0" x2="200" y2="0" marker-start="url(#tick)" marker-mid="url(#tick)" marker-end="url(#tick)"/><line x1="0" y1="0" x2="100" y2="0" class="dark"/><text x="0" y="-6">0</text><text x="100" y="-6" text-anchor="middle">50</text><text x="200" y="-6" text-anchor="end">100 FT</text></g>
+      <g class="scale" transform="translate(60, 40)"><line x1="0" y1="0" x2="200" y2="0" marker-start="url(#tick)" marker-mid="url(#tick)" marker-end="url(#tick)"/><line x1="0" y1="0" x2="100" y2="0" class="dark"/><text x="0" y="-6">0</text><text x="100" y="-6" text-anchor="middle">50</text><text x="200" y="-6" text-anchor="end">100 FT</text></g>
       <text class="stamp" x="960" y="700" text-anchor="end">SCALE 1" = 50'  ·  EIGHT LOTS  ·  PARCL V4 MAINNET</text>`;
     for (const g of this.svg.querySelectorAll('.lot')) {
       this.lots.set(g.dataset.key, g);
